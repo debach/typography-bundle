@@ -1,0 +1,20 @@
+services:
+    debach_typography.php_typography:
+        class: Debach\PhpTypography\PhpTypography
+        calls:
+            - [set_smart_diacritics, [false]]
+            - [set_style_initial_quotes, [false]]
+            - [set_hyphenation_language, ["%locale%"]]
+            - [set_smart_quotes_language, ["%locale%"]]
+
+    debach_typography.transformer:
+        class: Debach\TypographyBundle\Form\DataTransformer\TypographyTransformer
+        arguments:
+            - @debach_typography.php_typography
+
+    debach_typography.extension:
+        class:     Debach\TypographyBundle\Extension\Extension
+        arguments: ["@debach_typography.transformer"]
+        templating: true
+        tags:
+          - { name: twig.extension }

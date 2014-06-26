@@ -1,0 +1,11 @@
+{
+    "name": "debach/typography-bundle",
+    "description": "Integrates the debach/php-typography package into Symfony applications.",
+    "license": "MIT",
+    "require": {
+        "debach/php-typography": "dev-master"
+    },
+    "autoload": {
+        "psr-4": { "Debach\\TypographyBundle\\": "" }
+    }
+}
