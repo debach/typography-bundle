@@ -83,4 +83,4 @@ Then tell the typography bundle to use this service:
     debach_typography:
         typography_service: acme_demo.php_typography
 
-The configuration given above is the default configuration for the `PhpTypography` instance used by the bundle. See the (KINGdesk site)[http://kingdesk.com/projects/php-typography-documentation/] for a documentation of the available configuration setters.
+The configuration given above is the default configuration for the `PhpTypography` instance used by the bundle. See the [KINGdesk site](http://kingdesk.com/projects/php-typography-documentation/) for a documentation of the available configuration setters.
