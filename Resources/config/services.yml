@@ -10,7 +10,7 @@ services:
     debach_typography.transformer:
         class: Debach\TypographyBundle\Form\DataTransformer\TypographyTransformer
         arguments:
-            - @debach_typography.php_typography
+            - @service_container
 
     debach_typography.extension:
         class:     Debach\TypographyBundle\Extension\Extension

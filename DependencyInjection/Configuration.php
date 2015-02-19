@@ -20,9 +20,13 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('debach_typography');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('typography_service')
+                    ->defaultValue('debach_typography.php_typography')
+                ->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }
