@@ -10,7 +10,7 @@ services:
     debach_typography.transformer:
         class: Debach\TypographyBundle\Form\DataTransformer\TypographyTransformer
         arguments:
-            - @service_container
+            - "@service_container"
 
     debach_typography.extension:
         class:     Debach\TypographyBundle\Extension\Extension
