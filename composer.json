@@ -3,7 +3,8 @@
     "description": "Integrates the debach/php-typography package into Symfony applications.",
     "license": "MIT",
     "require": {
-        "debach/php-typography": "dev-master"
+        "debach/php-typography": "~1.0",
+        "twig/twig": "~1.11"
     },
     "autoload": {
         "psr-4": { "Debach\\TypographyBundle\\": "" }
