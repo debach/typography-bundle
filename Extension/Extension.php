@@ -26,14 +26,9 @@ class Extension extends \Twig_Extension
 
     public function getFilters()
     {
-        return array(
-            'typography' => new \Twig_Filter_Method($this, 'typography',
-                array(
-                    'is_safe' => array(
-                        'html'
-                    )
-                ))
-        );
+        return [
+            new \Twig_Filter('typography', [$this, 'typography'], ['is_safe' => ['html']])
+        ];
     }
 
     public function getTokenParsers()

@@ -4,7 +4,7 @@ namespace Debach\TypographyBundle\Extension\Twig;
 
 class TypographyNode extends \Twig_Node
 {
-    public function __construct(\Twig_NodeInterface $body, $lineno, $tag = 'typography')
+    public function __construct(\Twig_Node $body, $lineno, $tag = 'typography')
     {
         parent::__construct(array('body' => $body), array(), $lineno, $tag);
     }
