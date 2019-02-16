@@ -15,7 +15,7 @@ class TypographyNode extends \Twig_Node
             ->addDebugInfo($this)
             ->write("ob_start();\n")
             ->subcompile($this->getNode('body'))
-            ->write("echo \$this->env->getExtension('debach_typography_extension')->typography(ob_get_clean());\n")
+            ->write("echo \$this->env->getExtension('Debach\TypographyBundle\Extension\Extension')->typography(ob_get_clean());\n")
         ;
     }
 }

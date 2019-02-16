@@ -19,11 +19,6 @@ class Extension extends \Twig_Extension
         $this->transformer = $transformer;
     }
 
-    public function getName()
-    {
-        return 'debach_typography_extension';
-    }
-
     public function getFilters()
     {
         return [
