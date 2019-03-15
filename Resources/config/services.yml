@@ -1,6 +1,7 @@
 services:
     debach_typography.php_typography:
         class: Debach\PhpTypography\PhpTypography
+        public: true
         calls:
             - [set_smart_diacritics, [false]]
             - [set_style_initial_quotes, [false]]
@@ -12,9 +13,11 @@ services:
         arguments:
             - "@service_container"
 
+    Debach\TypographyBundle\Form\DataTransformer\TypographyTransformer:
+        alias: debach_typography.transformer
+
     debach_typography.extension:
         class:     Debach\TypographyBundle\Extension\Extension
         arguments: ["@debach_typography.transformer"]
-        templating: true
         tags:
           - { name: twig.extension }
