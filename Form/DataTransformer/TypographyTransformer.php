@@ -2,22 +2,21 @@
 
 namespace Debach\TypographyBundle\Form\DataTransformer;
 
-use Debach\PhpTypography\PhpTypography;
-
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\DataTransformerInterface;
 
+use PHP_Typography\PHP_Typography;
+use PHP_Typography\Settings;
+
 class TypographyTransformer implements DataTransformerInterface
 {
-    /**
-     * @var PhpTypography
-     */
     private $typography;
+    private $settings;
 
-    public function __construct(ContainerInterface $container)
+    public function __construct(PHP_Typography $typography, Settings $settings)
     {
-        $serviceName = $container->getParameter('debach_typography.typography_service');
-        $this->typography = $container->get($serviceName);
+        $this->typography = $typography;
+        $this->settings = $settings;
     }
     
     public function transform($value)
@@ -27,6 +26,6 @@ class TypographyTransformer implements DataTransformerInterface
     
     public function reverseTransform($value)
     {
-        return $this->typography->process($value);
+        return $this->typography->process($value, $this->settings);
     }
 }

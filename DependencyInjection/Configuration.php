@@ -12,21 +12,9 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
-    /**
-     * {@inheritDoc}
-     */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder('debach_typography');
-
-        $treeBuilder
-            ->getRootNode()
-            ->children()
-                ->scalarNode('typography_service')
-                    ->defaultValue('debach_typography.php_typography')
-                ->end()
-            ->end()
-        ;
 
         return $treeBuilder;
     }

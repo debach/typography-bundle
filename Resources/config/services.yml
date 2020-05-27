@@ -1,17 +1,21 @@
 services:
+    debach_typography.php_typography_settings:
+        class: PHP_Typography\Settings
+        # This service definition can be overwritten in your services.yml. The 
+        # settings can be defined by function call like the following:
+        # calls:
+        #     - [set_smart_diacritics, [false]]
+        #     - [set_style_initial_quotes, [false]]
+        #     - [set_hyphenation, [true]]
+
     debach_typography.php_typography:
-        class: Debach\PhpTypography\PhpTypography
-        public: true
-        calls:
-            - [set_smart_diacritics, [false]]
-            - [set_style_initial_quotes, [false]]
-            - [set_hyphenation_language, ["%locale%"]]
-            - [set_smart_quotes_language, ["%locale%"]]
+        class: PHP_Typography\PHP_Typography
 
     debach_typography.transformer:
         class: Debach\TypographyBundle\Form\DataTransformer\TypographyTransformer
         arguments:
-            - "@service_container"
+            - "@debach_typography.php_typography"
+            - "@debach_typography.php_typography_settings"
 
     Debach\TypographyBundle\Form\DataTransformer\TypographyTransformer:
         alias: debach_typography.transformer

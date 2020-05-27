@@ -1,9 +1,9 @@
 {
     "name": "debach/typography-bundle",
-    "description": "Integrates the debach/php-typography package into Symfony applications.",
+    "description": "Integrates the mundschenk-at/php-typography package into Symfony applications.",
     "license": "MIT",
     "require": {
-        "debach/php-typography": "~1.0",
+        "mundschenk-at/php-typography": "~6.6",
         "twig/twig": "~2.0"
     },
     "autoload": {
